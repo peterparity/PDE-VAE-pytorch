@@ -15,8 +15,14 @@ class PDEDataset(Dataset):
         """
         data = np.load(data_file)
 
-        self.data_x = data['x']
-        self.params = data['params']
+        if type(data) is np.ndarray:
+            self.data_x = data
+            self.params = None
+        elif 'x' in data.files:
+            self.data_x = data['x']
+            self.params = data['params'] if 'params' in data.files else None
+        else:
+            raise ValueError("Dataset import failed. NPZ files must include 'x' array containing data.")
 
         self.transform = transform
 
@@ -27,7 +33,11 @@ class PDEDataset(Dataset):
     def __getitem__(self, idx):
 
         x = torch.from_numpy(self.data_x[idx])
-        sample = [x, x, torch.from_numpy(self.params[idx])]
+
+        if self.params is None:
+            sample = [x, x, torch.tensor(float('nan'))]
+        else:
+            sample = [x, x, torch.from_numpy(self.params[idx])]
 
         if self.transform:
             sample = self.transform(sample)
