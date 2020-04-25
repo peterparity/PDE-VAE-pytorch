@@ -1,0 +1,49 @@
+{
+    "DATAFILE":             "path/to/dataset.npz",          // Path to dataset
+    "OUTFOLDER":            "path/to/output_folder",        // Output folder path (folder must not exist yet and will be created)
+
+    "cuda_device":          0,                              // CUDA device number to use (0 if only one GPU in system), or list of devices for data parallel
+    "data_parallel":        false,                          // OPTIONAL: Set to true for running in parallel on multiple GPUs, then set cuda_device to GPU list
+
+    "train":                true,                           // Set to true for training and false for evaluating (evaluating requires restart is true)
+
+    "restart":              false,                          // OPTIONAL: Set to true to restart from existing model parameters in file MODELLOAD
+    "freeze_encoder":       false,                          // OPTIONAL: Set to true to freeze encoder weights to refine decoder
+
+    "MODELLOAD":            "path/to/saved_model_file",     // OPTIONAL: Saved model file used to load weights if evaluating or if restart is true
+
+    "model":                "pde1d",                        // Model file from 'models/' folder, use pde1d for 1D PDEs and pde2d for 2D PDEs
+    "data_dimension":       1,                              // Number of spatial dimensions of dataset (should match 'model')
+    "data_channels":        2,                              // Number of channels in dataset (e.g. 1 for scalar fields, n for n-d vector fields)
+
+    "dataset_type":         "npz_dataset",                  // Dataloader dataset class
+    "boundary_cond":        "crop",                         // Boundary conditions: "crop" (default data augmentation), "periodic", "dirichlet0"
+    "input_size":           158,                            // For crop boundaries, cropped spatial size of encoder inputs
+    "training_size":        76,                             // For crop boundaries, cropped spatial size of decoder time-series
+
+    "input_depth":          128,                            // Temporal size of encoder inputs (can be smaller than dataset size for crop boundaries)
+    "training_depth":       31,                             // Time steps (temporal depth) to predict using decoder during training (excluding the initial condition)
+    "evaluation_depth":     255,                            // Time steps (temporal depth) to predict using decoder during evaluation (excluding the initial condition)
+
+    "linear_kernel_size":   0,                              // Linear convolutional kernel size in parallel with nonlinear kernel in decoder
+
+    "nonlin_kernel_size":   5,                              // Nonlinear convolutional kernel size in decoder
+    "hidden_channels":      16,                             // Number of convolutional kernel channels for inner layers
+    "prop_layers":          1,                              // Number of inner layers (excluding input and output conv. layers)
+
+    "discount_rate":        0.0,                            // OPTIONAL: Discount rate for each successive decoder prediction step
+    "rate_decay":           0.0,                            // OPTIONAL: Decay rate of discount_rate per epoch
+    "param_dropout_prob":   0.0,                            // OPTIONAL: Drop out probability for latent parameter estimation
+    "prop_noise":           0.0,                            // OPTIONAL: Stdv. of added noise after each PD step during training (sometimes improves stability of predictions)
+
+    "param_size":           5,                              // Number of latent parameters available (should be greater than expected number relevant parameters)
+    "beta":                 5e-4,                           // beta-VAE regularization parameter
+
+    "learning_rate":        1e-3,                           // ADAM optimizer initial learning rate
+    "eps":                  1e-8,                           // ADAM optimizer epsilon parameter
+    "num_workers":          2,                              // Number of worker processes for loading data
+    "batch_size":           50,                             // Batch size to run through the model
+
+    "max_epochs":           20000,                          // Number of epochs to run
+    "save_epochs":          2000,                           // Number of epochs between model saves
+}

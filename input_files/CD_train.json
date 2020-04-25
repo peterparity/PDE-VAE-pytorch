@@ -1,0 +1,38 @@
+{
+    "DATAFILE":             "data/CD_dataset_size1000.npz",
+    "OUTFOLDER":            "CD_run0",
+
+    "cuda_device":          0,
+
+    "train":                true,
+
+    "model":                "pde2d",
+    "data_dimension":       2,
+    "data_channels":        1,
+
+    "dataset_type":         "npz_dataset",
+    "boundary_cond":        "crop",
+    "input_size":           62,
+    "training_size":        44,
+
+    "input_depth":          45,
+    "training_depth":       15,
+    "evaluation_depth":     127,
+
+    "linear_kernel_size":   0,
+
+    "nonlin_kernel_size":   5,
+    "hidden_channels":      16,
+    "prop_layers":          1,
+
+    "param_size":           5,
+    "beta":                 1e-4,
+
+    "learning_rate":        1e-3,
+    "eps":                  1e-8,
+    "num_workers":          4,
+    "batch_size":           50,
+
+    "max_epochs":           8000,
+    "save_epochs":          800
+}

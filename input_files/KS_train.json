@@ -1,0 +1,38 @@
+{
+    "DATAFILE":             "data/KS_dataset_size5000.npz",
+    "OUTFOLDER":            "KS_run0",
+
+    "cuda_device":          0,
+
+    "train":                true,
+
+    "model":                "pde1d",
+    "data_dimension":       1,
+    "data_channels":        1,
+
+    "dataset_type":         "npz_dataset",
+    "boundary_cond":        "crop",
+    "input_size":           94,
+    "training_size":        76,
+
+    "input_depth":          64,
+    "training_depth":       31,
+    "evaluation_depth":     255,
+
+    "linear_kernel_size":   0,
+
+    "nonlin_kernel_size":   5,
+    "hidden_channels":      16,
+    "prop_layers":          1,
+
+    "param_size":           5,
+    "beta":                 2e-2,
+
+    "learning_rate":        1e-3,
+    "eps":                  1e-8,
+    "num_workers":          2,
+    "batch_size":           50,
+
+    "max_epochs":           2000,
+    "save_epochs":          200
+}
