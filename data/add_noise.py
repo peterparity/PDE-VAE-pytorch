@@ -1,5 +1,14 @@
 #!/usr/bin/env python
 
+"""
+add_noise.py
+
+Script adding white noise to the input dataset (*.npz file) with stdv adjusted below.
+
+Usage:
+python add_noise.py dataset.npz
+"""
+
 import os
 import sys
 import numpy as np

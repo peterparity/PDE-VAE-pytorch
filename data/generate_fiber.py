@@ -1,5 +1,12 @@
 #!/usr/bin/env python
 
+"""
+generate_fiber.py
+
+Script for generating the nonlinear fiber propagation dataset.
+Requires MEEP (https://meep.readthedocs.io/en/latest/).
+"""
+
 import shutil
 
 import meep as mp

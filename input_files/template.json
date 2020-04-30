@@ -1,3 +1,4 @@
+// REMOVE ALL COMMENTS BEFORE USING THIS FILE
 {
     "DATAFILE":             "path/to/dataset.npz",          // Path to dataset
     "OUTFOLDER":            "path/to/output_folder",        // Output folder path (folder must not exist yet and will be created)

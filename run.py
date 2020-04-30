@@ -2,6 +2,15 @@
 ''''exec python -u -- "$0" "$@" # '''
 # vi: syntax=python
 
+"""
+run.py
+
+Main script for training or evaluating a PDE-VAE model specified by the input file (JSON format).
+
+Usage:
+python run.py input_file.json > out
+"""
+
 import os
 import sys
 from shutil import copy2

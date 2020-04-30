@@ -1,3 +1,11 @@
+"""
+npz_dataset.py
+
+Dataset class (for PyTorch DataLoader) for data saved in *.npz or *.npy format.
+If using a *.npz file, it must contain an array 'x' that stores all the data and
+can contain an optional array 'params' of known parameters for comparison.
+"""
+
 import torch
 import numpy as np
 

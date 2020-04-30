@@ -1,3 +1,10 @@
+"""
+pde2d_decoder_only.py
+
+Propagating decoder network only (PDEDecoder module) with tunable latent parameters z.
+To use, import weights from trained model.
+"""
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F

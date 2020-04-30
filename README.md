@@ -1,8 +1,8 @@
 # PDE-VAE-pytorch
 
-Implementation of a variational autoencoder (VAE)-based model for extracting interpretable physical parameters which parameterize the dynamics of a spatiotemporal system governed by a partial differential equation (PDE).
+Implementation of a variational autoencoder (VAE)-based method for extracting interpretable physical parameters (from spatiotemporal data) that parameterize the dynamics of a spatiotemporal system, e.g. a system governed by a partial differential equation (PDE).
 
-Please cite "**Extracting Interpretable Physical Parameters from Spatiotemporal Systems using Unsupervised Learning**" (https://arxiv.org/abs/1907.06011) and see the paper for more details.
+Please cite "**Extracting Interpretable Physical Parameters from Spatiotemporal Systems using Unsupervised Learning**" (https://arxiv.org/abs/1907.06011) and see the paper for more details. This is the official repository for the paper.
 
 ## Requirements
 PyTorch version >= 1.1.0, NumPy
@@ -27,5 +27,7 @@ python run.py input_file.json > out
 
 ### Evaluation
 To run the provided evaluation script, change the "train" parameter to *false* in the input file, and make sure to set "MODELLOAD" in the input file to the path of the trained model save. Then, rerun the same input file. Note that even if crop boundaries are used, the evaluation method will no longer crop to smaller sizes and instead evaluates on the full dataset, so adjustments may need to be made to the boundary conditions and batch size.
+
+During evaluation, using the "pde1d_decoder_only" model (or "pde2d_decoder_only" model) with weights loaded from the trained model allows you to manually tune the latent parameters and observe the predicted propagation (given an input initial condition). This may aid in interpreting the extracted relevant parameters.
 
 Custom evaluation routines are recommended for detailed data analysis.

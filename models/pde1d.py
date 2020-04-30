@@ -1,3 +1,9 @@
+"""
+pde1d.py
+
+PDE VAE model (PDEAutoEncoder module) for fitting data with 1 spatial dimension.
+"""
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F

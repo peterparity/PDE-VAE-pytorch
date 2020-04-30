@@ -1,5 +1,11 @@
 #!/usr/bin/env python
 
+"""
+generate_CD.py
+
+Script for generating the 2D convection-diffusion dataset.
+"""
+
 import os
 import numpy as np
 from scipy.fftpack import fft2, ifft2

@@ -1,5 +1,11 @@
 #!/usr/bin/env python
 
+"""
+generate_NLSE.py
+
+Script for generating the 1D nonlinear Schrödinger dataset.
+"""
+
 import os
 
 import numpy as np

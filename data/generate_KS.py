@@ -1,5 +1,11 @@
 #!/usr/bin/env python
 
+"""
+generate_KS.py
+
+Script for generating the 1D Kuramoto-Sivashinsky dataset.
+"""
+
 import os
 
 import numpy as np
