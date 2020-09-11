@@ -2,7 +2,7 @@
 
 Implementation of a variational autoencoder (VAE)-based method for extracting interpretable physical parameters (from spatiotemporal data) that parameterize the dynamics of a spatiotemporal system, e.g. a system governed by a partial differential equation (PDE).
 
-Please cite "**Extracting Interpretable Physical Parameters from Spatiotemporal Systems using Unsupervised Learning**" (https://arxiv.org/abs/1907.06011) and see the paper for more details. This is the official repository for the paper.
+Please cite "**Extracting Interpretable Physical Parameters from Spatiotemporal Systems using Unsupervised Learning**" (https://journals.aps.org/prx/abstract/10.1103/PhysRevX.10.031056) and see the paper for more details. This is the official repository for the paper.
 
 ## Requirements
 PyTorch version >= 1.1.0, NumPy
