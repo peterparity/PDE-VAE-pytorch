@@ -1,4 +1,4 @@
-# PDE-VAE-pytorch
+# PDE-VAE: Variational Autoencoder for *Extracting Interpretable Physical Parameters from Spatiotemporal Systems using Unsupervised Learning*
 
 Implementation of a variational autoencoder (VAE)-based method for extracting interpretable physical parameters (from spatiotemporal data) that parameterize the dynamics of a spatiotemporal system, e.g. a system governed by a partial differential equation (PDE).
 
